@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Model Test Page</title>
+    <meta content="utf-8" http-equiv="encoding">
+</head>
+<body>
+    <script type="text/javascript" src="../lib/yui-min.js"></script>
+    <script type="text/javascript" src="../src/todo-model.js"></script>
+    <script type="text/javascript" src="../src/local-storage.js"></script>
+    <script type="text/javascript" src="todo-model-test.js"></script>
+	<div id="testLogger" class="yui3-skin-sam"></div>
+	<script type="text/javascript">
+
+YUI().use('test', 'test-console', 'todo-model-test', function (Y) {
+    
+    // create the test console
+    new Y.Test.Console({
+        newestOnTop : false,
+        style: 'block',
+        filters: {
+            pass: true,
+            fail: true
+        }
+    }).render('#testLogger');
+
+    // run the tests
+    Y.Test.Runner.run();
+
+});
+
+</script>
+</body>
+</html>
